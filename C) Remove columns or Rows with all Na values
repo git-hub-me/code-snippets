@@ -1,11 +1,19 @@
 
 
 # obs dataframe
+
 #row
 #create a column to calculate NA values in each rows
+
 obs$NAs <- rowSums(is.na(obs))
-obs_witoutNAs <- obs[((obs$NAs)>length(colnames(obs))-1),]       #-1 for the new NAs column we created
+
+x <- length(colnames(obs)-1) #for all columns # you can set the value according to your interests
+
+obs_witoutNAs <- obs[((obs$NAs)>x,]       #-1 for the new NAs column we created
+
 
 #col
-x <- length(obs$NAs) #or any other column
+
+x <- length(obs$NAs) #for all observations(rows) # you can set the value according to your interests
+
 obs_withoutNAs <- obs[,(colSums(is.na(obs))=x)]
