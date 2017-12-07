@@ -1,0 +1,19 @@
+
+#categories are Var1, Var2, Var4 arranged in i columns of the dataframe source
+
+
+#create empty dataframe
+out <- data.frame(Var1=NA,Var2=NA ,Var3=NA )
+
+#loop over calculating proportions and adding them rowwise to the empty dataframe
+for (i in 1:length(categories))(
+  out <- rbind(out,100*prop.table(table(source[,i])))
+)
+
+#out$Var12 <- as.numeric(out$Var2) + as.numeric(out$Var3) #if you want to add column values
+
+#rounding off the proportion values to 2 digits and pasting "%" sign at the end
+out <- data.frame(lapply(out[],FUN =  function(x)(paste(round(as.numeric(x),digits = 2),"%",sep = ""))))
+
+#removing first empty row of observations
+out <- cbind(trait$SNPs,out[-1,])
