@@ -1,0 +1,14 @@
+
+
+#create originial dataframe with columns you want to retain in new data frame (at least one)
+x <- data.frame(original[,i])
+pat <- "." #pattern on which you want to split the colum
+m <- number columns that will form after spltting
+
+for (i in 1:151)(
+  x <- cbind(x,str_split(original[,i+2], pattern = pat,n=m,simplify = TRUE))
+  )
+#naming the column values ex. if original column was Col_1 new corresponding columns will be Col_1.a and Col_1.b
+colnames(x) <- paste(rep(colnames(original[,3:153]),each=2),letters[1:2],sep=".")
+
+#x <- cbind(x,original[,c(i,j,..)]) #i,j,... columns you want to retain
