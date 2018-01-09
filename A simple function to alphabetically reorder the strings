@@ -1,0 +1,16 @@
+
+
+order_string <- function(x){
+    if (!is.na(x)){                                          #Check whether the input has NA value, going forward if its not,
+    
+    word <- unlist(strsplit(x,""))                           #splitting and unlisting 
+    
+    x <- paste(word[order(word)],collapse = "")              #ordering the words and pasting them together
+    
+    return(unlist(x))                                        #returning the output
+  
+  }else(return(x))                                          # if its NA then return as it is                                         
+}
+
+
+list <- lapply(list, FUN=FUN = function(x)(order_gen(x) ) ) )  #applying it on list function
