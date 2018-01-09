@@ -13,4 +13,4 @@ order_string <- function(x){
 }
 
 
-list <- lapply(list, FUN=FUN = function(x)(order_gen(x) ) ) )  #applying it on list function
+list <- lapply(list, FUN=function(x)(order_gen(x) ) ) )  #applying it on list function
