@@ -7,3 +7,5 @@ B) to split multiple columns in a dataframe
 C) removing column or rows with NA values
 
 D) A simple function to alphabetically reorder the strings.
+
+E) Compare two datasets, their intersection, setdiff and duplications
